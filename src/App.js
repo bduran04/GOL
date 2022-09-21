@@ -1,14 +1,15 @@
-import { useRef, useState } from 'react';
+import { useCallback, useRef, useState } from 'react';
 import { BLINKER_BOARD } from './game';
 import produce from 'immer';
+import { getNextGeneration } from './game';
 
 //1) create the grid 
-//2) ability to change the state of each cell, where 1 = live/"on" & 0 = dead/"no color"
+//2) create ability to change the state of each cell, where 1 = live/"on" & 0 = dead/"no color"
   //ask if I'm able to use packages; explain produce by immer 
-//create the start button 
+//3) create the start button 
 
-const numRows = 50;
-const numCols = 50;
+const numRows = 20;
+const numCols = 20;
 
 function App() {
   const [grid, setGrid] = useState(() => {
@@ -20,15 +21,38 @@ function App() {
   });
 
   //this is for the start button
-  const [running, SetRunning] = useState(false);
+  const [running, setRunning] = useState(false);
 
   const runningRef = useRef(running);
   runningRef.current = running;
 
+  //useCallback is similar to useMemo, except that useMemo returns a memoized value, where useCallback returns a memoized function; prevents a component from re-rendering unless its props have been changed 
+  const runSimulation = useCallback(() => {
+    if (!runningRef.current) {
+      return;
+    }
+    //GOL rules implementation 
+    setGrid(g => {
+      return produce(g, gridCopy => {
+        getNextGeneration(gridCopy);
+      })
+    })
+  
+    setTimeout(runSimulation, 100);
+  }, [])
+
   return (
     //wrapped in a fragment bc React is only able to return one child, not multiple on same level 
     <>
-    <button>Start</button>
+    <button
+    onClick={() => {
+      setRunning(!running);
+      if (!running) {
+        runningRef.current = true;
+        runSimulation();
+      }
+    }}
+    >{running ? "Stop" : "Start"}</button>
     <div 
     style={{
       display: "grid",

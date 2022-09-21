@@ -94,7 +94,4 @@ export function getNextGeneration(inputBoard) {
 		}
 	}
 	return outputBoard;
-}
-console.log(getNextGeneration(Rando_BOARD));
-console.log(getNextGeneration(BLOCK_BOARD));
-console.log(getNextGeneration(BLINKER_BOARD));
+};
