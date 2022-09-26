@@ -3,6 +3,7 @@
   ## Table of Contents
 
 1. [Description](#description)
+2. [Deployed Site](#deployedsite)
 2. [Technologies Used](#technologies)
 3. [Installation](#installation)
 4. [License](#license)
@@ -12,6 +13,9 @@
 
 ## [Description](#description)
 This application allows the user to click individual cells and implements the rules for Conway's The Game of Life algorithm. 
+
+## [Deployed Site](#deployedsite)
+  https://bduran04.github.io/GOL/
 
  ![This is the git for the app](images/gameOfLife.gif)
  
