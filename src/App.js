@@ -1,5 +1,4 @@
 import { useCallback, useRef, useState } from 'react';
-import { BLINKER_BOARD } from './game';
 import produce from 'immer';
 import { getNextGeneration } from './game';
 
@@ -44,15 +43,6 @@ function App() {
   return (
     //wrapped in a fragment bc React is only able to return one child, not multiple on same level 
     <>
-    <button
-    onClick={() => {
-      setRunning(!running);
-      if (!running) {
-        runningRef.current = true;
-        runSimulation();
-      }
-    }}
-    >{running ? "Stop" : "Start"}</button>
     <div 
     style={{
       display: "grid",
@@ -73,6 +63,15 @@ function App() {
         backgroundColor: grid[i][k] ? "aquamarine" : undefined, 
         border: "solid 1px black"}}/>)))}
     </div>
+    <button
+    onClick={() => {
+      setRunning(!running);
+      if (!running) {
+        runningRef.current = true;
+        runSimulation();
+      }
+    }}
+    >{running ? "Stop" : "Start"}</button>
     </>
   );
 }
