@@ -43,9 +43,18 @@ function App() {
   return (
     //wrapped in a fragment bc React is only able to return one child, not multiple on same level 
     <>
+    <h1
+    style={{
+      justifyItems: "center",
+      alignItems: "center"
+    }}>
+      Game of Life
+    </h1>
     <div 
     style={{
       display: "grid",
+      justifyContent: "center",
+      alignItems: "center",
       gridTemplateColumns: `repeat(${numCols}, 20px)`
     }}>
       {grid.map((rows, i) => (rows.map((col, k) => 
@@ -63,6 +72,11 @@ function App() {
         backgroundColor: grid[i][k] ? "aquamarine" : undefined, 
         border: "solid 1px black"}}/>)))}
     </div>
+    <div
+     style={{
+      padding: "2rem",
+      position: 'relative',
+    }}>
     <button
     onClick={() => {
       setRunning(!running);
@@ -72,6 +86,7 @@ function App() {
       }
     }}
     >{running ? "Stop" : "Start"}</button>
+    </div>
     </>
   );
 }
