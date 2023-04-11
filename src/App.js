@@ -46,7 +46,8 @@ function App() {
     <h1
     style={{
       justifyItems: "center",
-      alignItems: "center"
+      alignItems: "center",
+      textAlign: "center"
     }}>
       Game of Life
     </h1>
@@ -74,8 +75,8 @@ function App() {
     </div>
     <div
      style={{
-      padding: "2rem",
-      position: 'relative',
+      marginRight: "3rem",
+      padding: "1rem"
     }}>
     <button
     onClick={() => {
@@ -86,6 +87,9 @@ function App() {
       }
     }}
     >{running ? "Stop" : "Start"}</button>
+    <button>
+      Reset
+    </button>
     </div>
     </>
   );
