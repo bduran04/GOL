@@ -87,7 +87,10 @@ function App() {
       }
     }}
     >{running ? "Stop" : "Start"}</button>
-    <button>
+    <button
+    onClick={() => {
+      setGrid(grid);
+    }}>
       Reset
     </button>
     </div>
