@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/GOL/static/css/main.e6c13ad2.css",
-    "main.js": "/GOL/static/js/main.8d455019.js",
+    "main.css": "/GOL/static/css/main.1fe4778c.css",
+    "main.js": "/GOL/static/js/main.8fb1a782.js",
     "static/js/787.7ebe7c37.chunk.js": "/GOL/static/js/787.7ebe7c37.chunk.js",
     "index.html": "/GOL/index.html",
-    "main.e6c13ad2.css.map": "/GOL/static/css/main.e6c13ad2.css.map",
-    "main.8d455019.js.map": "/GOL/static/js/main.8d455019.js.map",
+    "main.1fe4778c.css.map": "/GOL/static/css/main.1fe4778c.css.map",
+    "main.8fb1a782.js.map": "/GOL/static/js/main.8fb1a782.js.map",
     "787.7ebe7c37.chunk.js.map": "/GOL/static/js/787.7ebe7c37.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e6c13ad2.css",
-    "static/js/main.8d455019.js"
+    "static/css/main.1fe4778c.css",
+    "static/js/main.8fb1a782.js"
   ]
 }
