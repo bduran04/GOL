@@ -1,11 +1,7 @@
 import { useCallback, useRef, useState } from 'react';
 import produce from 'immer';
 import { getNextGeneration } from './game';
-
-//1) create the grid 
-//2) create ability to change the state of each cell, where 1 = live/"on" & 0 = dead/"no color"
-  //ask if I'm able to use packages; explain produce by immer 
-//3) create the start button 
+import './App.css'
 
 const numRows = 20;
 const numCols = 20;
@@ -47,9 +43,10 @@ function App() {
     style={{
       justifyItems: "center",
       alignItems: "center",
-      textAlign: "center"
+      textAlign: "center",
+      color: "black"
     }}>
-      Game of Life
+      Conway's Game of Life
     </h1>
     <div 
     style={{
@@ -89,7 +86,7 @@ function App() {
     >{running ? "Stop" : "Start"}</button>
     <button
     onClick={() => {
-      setGrid(grid);
+      setGrid()
     }}>
       Reset
     </button>
